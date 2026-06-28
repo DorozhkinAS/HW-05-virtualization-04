@@ -63,7 +63,8 @@ COPY . .
 RUN pip install -r requirements.txt
 
 # Запускаем приложение с помощью uvicorn, делая его доступным по сети
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"] 
+``` 
 
 
 ## Задача 2 (*)
