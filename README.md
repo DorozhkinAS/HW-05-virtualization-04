@@ -48,8 +48,22 @@ See 'snap info docker' for additional versions.
 
 ## Ответ 1
 
+<img width="1216" height="613" alt="5-1" src="https://github.com/user-attachments/assets/5a8c402d-2058-4bf9-b712-09fc93b7aee1" />
 
+<img width="1413" height="767" alt="5-2" src="https://github.com/user-attachments/assets/0696a0e7-1f34-47e7-b1b6-e9d2ddded9a9" />
 
+Листинг кода Dockerfile.python
+
+```Dockerfile
+FROM python:3.12-slim
+
+#  Ваш код здесь #
+WORKDIR /app
+COPY . .
+RUN pip install -r requirements.txt
+
+# Запускаем приложение с помощью uvicorn, делая его доступным по сети
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
 
 
 ## Задача 2 (*)
