@@ -67,7 +67,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
 ``` 
 
 
-## Задача 2 (*)
+## Задача 2 (*) не нужно 
 1. Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . [Инструкция](https://cloud.yandex.ru/ru/docs/container-registry/quickstart/?from=int-console-help)
 2. Настройте аутентификацию вашего локального docker в yandex container registry.
 3. Соберите и залейте в него образ с python приложением из задания №1.
@@ -95,6 +95,66 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
 
 
 ## Ответ 3
+
+<img width="910" height="132" alt="5-3" src="https://github.com/user-attachments/assets/ece973a2-f878-4a1e-936a-f1cdb8e3f424" />
+
+<img width="819" height="625" alt="5-4" src="https://github.com/user-attachments/assets/f9714b0d-fee9-4a13-bda5-c9e2ef6e57d4" />
+
+
+<img width="1303" height="135" alt="5-5" src="https://github.com/user-attachments/assets/1265438c-91c5-4479-a1f2-6a4b47f3a7be" />
+
+
+
+Листинг кода compose.yaml:  
+
+
+```yaml
+include:
+  - proxy.yaml
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.python
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.5
+    #ports:
+    #  - 5000:5000
+    environment:
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: ${MYSQL_USER}
+      DB_PASSWORD: ${MYSQL_PASSWORD}
+      DB_NAME: ${MYSQL_DATABASE}      
+    depends_on:
+      - db
+  db:
+    image: mysql:8
+    restart: always
+    networks:
+      backend:
+        ipv4_address: 172.20.0.10
+    #ports:
+    #  - 3306:3306
+    env_file:
+      - .env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_HOST: "%"     
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+```
+
 
 
 ## Задача 4
