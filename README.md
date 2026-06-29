@@ -67,16 +67,6 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5000"]
 ``` 
 
 
-## Задача 2 (*) не нужно 
-1. Создайте в yandex cloud container registry с именем "test" с помощью "yc tool" . [Инструкция](https://cloud.yandex.ru/ru/docs/container-registry/quickstart/?from=int-console-help)
-2. Настройте аутентификацию вашего локального docker в yandex container registry.
-3. Соберите и залейте в него образ с python приложением из задания №1.
-4. Просканируйте образ на уязвимости.
-5. В качестве ответа приложите отчет сканирования.
-
-## Ответ 2
-
-
 ## Задача 3
 1. Изучите файл "proxy.yaml"
 2. Создайте в репозитории с проектом файл ```compose.yaml```. С помощью директивы "include" подключите к нему файл "proxy.yaml".
@@ -196,16 +186,6 @@ sudo docker ps
 https://github.com/jack34ru/shvirtd-example-python
 
 
- 
-## Задача 5 (*)   не нужно можно удалить
-1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
-2. Протестируйте ручной запуск
-3. Настройте выполнение скрипта раз в 1 минуту через cron, crontab или systemctl timer. Придумайте способ не светить логин/пароль в git!!
-4. Предоставьте скрипт, cron-task и скриншот с несколькими резервными копиями в "/opt/backup"
-
-## Ответ 5
-
-
 
 ## Задача 6
 Скачайте docker образ ```hashicorp/terraform:latest``` и скопируйте бинарный файл ```/bin/terraform``` на свою локальную машину, используя dive и docker save.
@@ -213,5 +193,17 @@ https://github.com/jack34ru/shvirtd-example-python
 
 
 ## Ответ 6
+
+<img width="1493" height="841" alt="5-6" src="https://github.com/user-attachments/assets/56327b69-4746-4e6a-aac2-31b2fecb753a" />
+
+
+<img width="414" height="106" alt="5-62" src="https://github.com/user-attachments/assets/ea14640c-d929-40d5-94ba-d2848dad14cd" />
+
+
+<img width="1659" height="821" alt="5-63" src="https://github.com/user-attachments/assets/ea166b82-2d6a-44be-a5dd-cdf3496a1bcd" />
+
+
+
+
 
 
