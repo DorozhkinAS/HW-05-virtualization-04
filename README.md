@@ -168,9 +168,36 @@ networks:
 
 ## Ответ 4
 
+<img width="414" height="527" alt="5-44" src="https://github.com/user-attachments/assets/59d224c7-ae48-4e2a-9e57-fe5d0f27c910" />
 
 
-## Задача 5 (*)
+Листинг кода скрипта script-for-yacloud.sh
+
+
+```bash
+#!/bin/bash
+
+cd /opt
+
+sudo rm -rf shvirtd-example-python
+
+sudo git clone https://github.com/jack34ru/shvirtd-example-python.git
+
+cd shvirtd-example-python
+
+sudo docker compose up -d
+
+sudo docker ps
+
+```
+
+
+Ссылка на fork репозитория shvirtd-example-python:  
+https://github.com/jack34ru/shvirtd-example-python
+
+
+ 
+## Задача 5 (*)   не нужно можно удалить
 1. Напишите и задеплойте на вашу облачную ВМ bash скрипт, который произведет резервное копирование БД mysql в директорию "/opt/backup" с помощью запуска в сети "backend" контейнера из образа ```schnitzler/mysqldump``` при помощи ```docker run ...``` команды. Подсказка: "документация образа."
 2. Протестируйте ручной запуск
 3. Настройте выполнение скрипта раз в 1 минуту через cron, crontab или systemctl timer. Придумайте способ не светить логин/пароль в git!!
