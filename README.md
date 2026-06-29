@@ -1,6 +1,35 @@
 # Домашнее задание к занятию 5. «Практическое применение Docker» - Дорожкин Артем
 
 
+### Инструкция к выполнению
+
+1. Для выполнения заданий обязательно ознакомьтесь с [инструкцией](https://github.com/netology-code/devops-materials/blob/master/cloudwork.MD) по экономии облачных ресурсов. Это нужно, чтобы не расходовать средства, полученные в результате использования промокода.
+3. **Своё решение к задачам оформите в вашем GitHub репозитории.**
+4. В личном кабинете отправьте на проверку ссылку на .md-файл в вашем репозитории.
+5. Сопроводите ответ необходимыми скриншотами.
+
+---
+## Примечание: Ознакомьтесь со схемой виртуального стенда [по ссылке](https://github.com/netology-code/shvirtd-example-python/blob/main/schema.pdf)
+
+---
+
+## Задача 0
+1. Убедитесь что у вас НЕ(!) установлен ```docker-compose```, для этого получите следующую ошибку от команды ```docker-compose --version```
+```
+Command 'docker-compose' not found, but can be installed with:
+
+sudo snap install docker          # version 24.0.5, or
+sudo apt  install docker-compose  # version 1.25.0-1
+
+See 'snap info docker' for additional versions.
+```
+В случае наличия установленного в системе ```docker-compose``` - удалите его.  
+2. Убедитесь что у вас УСТАНОВЛЕН ```docker compose```(без тире) версии не менее v2.24.X, для это выполните команду ```docker compose version```  
+###  **Своё решение к задачам оформите в вашем GitHub репозитории!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!**
+
+---
+
+
 ## Задача 1
 1. Сделайте в своем GitHub пространстве fork [репозитория](https://github.com/netology-code/shvirtd-example-python).
 
